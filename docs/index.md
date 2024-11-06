@@ -11,13 +11,11 @@ Local-Show-Tive is cloud-based and available for use on any device that can conn
 
 ## First-time Users
 
-Complete the [Get Started guide]() to quickly set up the service's prerequisites and create your first users and tasks.
-
-Once you complete the `Get Started` process, refer to the following **Tutorials** and **References** for further documentation. 
+[first-time content]
 
 ## Tutorials
 
-Learn how to do the most common To-Do Service tasks:
+Learn how to do the most common Local-Show-Tive tasks:
 
 * [Enroll a new user]()
 * [Add a new task]()
@@ -28,7 +26,7 @@ To view the full list of available tutorials, see [Tutorials]().
 
 ## References
 
-All user-related actions are performed under the user resource, and all task-related actions are performed with the task resource.
+All show-related actions are performed under the `shows` resource, and all venue-related actions are performed with the `venues` resource.
 
 To view detailed descriptions of all the service's resources and individual API calls, see [References]().
 
