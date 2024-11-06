@@ -3,11 +3,11 @@ layout: page
 ---
 # Local-Show-Tive API Service
 
-Local-Show-Tive is an API-based task list service that enables (who?) to (what?).
+**Local-Show-Tive** is an API-based task list service that enables (who?) to (what?).
 
 [value statement]
 
-Local-Show-Tive is cloud-based and available for use on any device that can connect to the internet.
+**Local-Show-Tive** is cloud-based and available for use on any device that can connect to the internet.
 
 ## First-time Users
 
@@ -15,12 +15,9 @@ Local-Show-Tive is cloud-based and available for use on any device that can conn
 
 ## Tutorials
 
-Learn how to do the most common Local-Show-Tive tasks:
+Learn how to do the most common **Local-Show-Tive** tasks:
 
-* [Enroll a new user]()
-* [Add a new task]()
-* [Add a new task reminder]()
-* [Delete a task]()
+* 
 
 To view the full list of available tutorials, see [Tutorials]().
 
@@ -32,4 +29,4 @@ To view detailed descriptions of all the service's resources and individual API 
 
 ## Contact Us
 
-If you have questions or inquiries related to Local-Show-Tive or its documentation, please email `levigbeverly@gmail.com`.
+If you have questions or inquiries related to **Local-Show-Tive** or its documentation, please email `levigbeverly@gmail.com`.
