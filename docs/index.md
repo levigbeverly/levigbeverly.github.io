@@ -32,31 +32,31 @@ To view detailed descriptions the service's resources and individual API calls, 
 <details>
   <summary>References</summary>
   
-  - **venues** resource
+  - [**venues** resource]()
     - **POST**
-      - Add venue
+      - [Add venue]()
     - **PUT**
-      - Update venue
+      - [Update venue]()
     - **GET**
-      - Get all venues
-      - Get venue by name
-      - Get venue by id
-      - Get venue by city
+      - [Get all venues]()
+      - [Get venue by name]()
+      - [Get venue by id]()
+      - [Get venue by city]()
     - **DELETE**
-      - Delete venue
+      - [Delete venue]()
 
-  - **concerts** resource
+  - [**concerts** resource]()
     - **POST**
-      - Add concert
+      - [Add concert]()
     - **PUT**
-      - Update concert
+      - [Update concert]()
     - **GET**
-      - Get all concerts
-      - Get concert by venue id
-      - Get concert by artist
-      - Get concert by date
+      - [Get all concerts]()
+      - [Get concert by venue id]()
+      - [Get concert by artist]()
+      - [Get concert by date]()
     - **DELETE**
-      - Delete concert
+      - [Delete concert]()
 </details>
 
 ## Contact Us
