@@ -14,33 +14,31 @@ layout: page
 
 ## First-time Users
 
-If this is your first time setting up and using **Local-Show-Tive**, see [Getting Started](). The topic walks you through the service prerequisites and how to set up the service.
-
-[WIP]
+If this is your first time setting up and using **Local-Show-Tive**, see [Getting Started](getting-started.md). The topic walks you through the service prerequisites and how to set up the service.
 
 ## Tutorials
 
 Learn how to do the most common **Local-Show-Tive** tasks:
- - [Add a venue]()
- - [Add a concert]()
- - [Search for concerts by venue]()
- - [Search for concerts by artist]()
+ - [Add a venue](tutorials/add-a-venue.md)
+ - [Add a concert](tutorials/add-a-concert.md)
+ - [Search for concerts by venue](tutorials/)
+ - [Search for concerts by artist](tutorials/)
 
 To view the full list of available tutorials, click **Tutorials** below:
 <details>
   <summary>Tutorials</summary>
   
   - **venues**
-    - [Add a venue]()
-    - [Update a venue]()
-    - [Delete a venue]()
+    - [Add a venue](tutorials/add-a-venue.md)
+    - [Update a venue](tutorials/update-a-venue.md)
+    - [Delete a venue](tutorials/delete-a-venue.md)
  
   - **concerts**
-    - [Add a concert]()
-    - [Change a concert's date and time]()
-    - [Search for concerts by venue]()
-    - [Search for concerts by artist]()
-    - [Delete a concert]()
+    - [Add a concert](tutorials/add-a-concert.md)
+    - [Change a concert's date and time](tutorials/change-a-concerts-date-and-time.md)
+    - [Search for concerts by venue](tutorials/search-for-concerts-by-venue.md)
+    - [Search for concerts by artist](tutorials/search-for-concerts-by-artist.md)
+    - [Delete a concert](tutorials/delete-a-concert.md)
 </details>
 
 ## References
@@ -51,31 +49,31 @@ To view detailed descriptions the service's resources and individual API calls, 
 <details>
   <summary>References</summary>
   
-  - [**venues** resource]()
+  - [**venues** resource](references/venues.md)
     - **POST**
-      - [Add venue]()
+      - [Add venue](references/post-add-venue.md)
     - **PUT**
-      - [Update venue]()
+      - [Update venue](references/put-update-venue.md)
     - **GET**
-      - [Get all venues]()
-      - [Get venue by name]()
-      - [Get venue by id]()
-      - [Get venue by city]()
+      - [Get all venues](references/get-venues.md)
+      - [Get venue by name](references/get-venue-by-name.md)
+      - [Get venue by id](references/get-venue-by-id.md)
+      - [Get venue by city](references/get-venue-by-city.md)
     - **DELETE**
-      - [Delete venue]()
+      - [Delete venue](references/delete-venue.md)
 
-  - [**concerts** resource]()
+  - [**concerts** resource](references/concerts.md)
     - **POST**
-      - [Add concert]()
+      - [Add concert](references/post-add-concert.md)
     - **PUT**
-      - [Update concert]()
+      - [Update concert](references/put-update-concert.md)
     - **GET**
-      - [Get all concerts]()
-      - [Get concert by venue id]()
-      - [Get concert by artist]()
-      - [Get concert by date]()
+      - [Get all concerts](references/get-concerts.md)
+      - [Get concert by venue id](references/get-concert-by-venue-id.md)
+      - [Get concert by artist](references/get-concert-by-artist.md)
+      - [Get concert by date](references/get-concert-by-date.md)
     - **DELETE**
-      - [Delete concert]()
+      - [Delete concert](references/delete-concert.md)
 </details>
 
 ## Contact Us
