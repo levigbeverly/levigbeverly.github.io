@@ -31,6 +31,7 @@ All show-related actions are performed under the [`shows`]() resource, and all v
 To view detailed descriptions the service's resources and individual API calls, click **References**:
 <details>
   <summary>References</summary>
+  
   - **venues** resource
     - **POST**
       - Add venue
