@@ -14,21 +14,40 @@ layout: page
 
 ## First-time Users
 
+If this is your first time setting up and using **Local-Show-Tive**, see [Getting Started](). The topic walks you through the service prerequisites and how to set up the service.
+
 [WIP]
 
 ## Tutorials
 
 Learn how to do the most common **Local-Show-Tive** tasks:
+ - [Add a venue]()
+ - [Add a concert]()
+ - [Search for concerts by venue]()
+ - [Search for concerts by artist]()
 
-- [WIP]
-
-To view the full list of available tutorials, see [Tutorials]().
+To view the full list of available tutorials, click **Tutorials** below:
+<details>
+  <summary>Tutorials</summary>
+  
+  - **venues**
+    - [Add a venue]()
+    - [Update a venue]()
+    - [Delete a venue]()
+ 
+  - **concerts**
+    - [Add a concert]()
+    - [Change a concert's date and time]()
+    - [Search for concerts by venue]()
+    - [Search for concerts by artist]()
+    - [Delete a concert]()
+</details>
 
 ## References
 
 All show-related actions are performed under the [`shows`]() resource, and all venue-related actions are performed with the [`venues`]() resource.
 
-To view detailed descriptions the service's resources and individual API calls, click **References**:
+To view detailed descriptions the service's resources and individual API calls, click **References** below:
 <details>
   <summary>References</summary>
   
