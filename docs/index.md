@@ -26,35 +26,35 @@ To view the full list of available tutorials, see [Tutorials]().
 
 ## References
 
-All show-related actions are performed under the `shows` resource, and all venue-related actions are performed with the `venues` resource.
+All show-related actions are performed under the [`shows`]() resource, and all venue-related actions are performed with the [`venues`]() resource.
 
-To view detailed descriptions  the service's resources and individual API calls, click **References**:
+To view detailed descriptions the service's resources and individual API calls, click **References**:
 <details>
   <summary>References</summary>
 - **venues** resource
-- - **POST**
-- - - Add venue
-- - **PUT**
-- - - Update venue
-- - **GET**
-- - - Get all venues
-- - - Get venue by name
-- - - Get venue by id
-- - - Get venue by city
-- - **DELETE**
-- - - Delete venue
+  - **POST**
+    - Add venue
+  - **PUT**
+    - Update venue
+  - **GET**
+    - Get all venues
+    - Get venue by name
+    - Get venue by id
+    - Get venue by city
+  - **DELETE**
+    - Delete venue
 - **concerts** resource
-- - **POST**
-- - - Add concert
-- - **PUT**
-- - - Update concert
-- - **GET**
-- - - Get all concerts
-- - - Get concert by venue id
-- - - Get concert by artist
-- - - Get concert by date
-- - **DELETE**
-- - - Delete concert
+  - **POST**
+    - Add concert
+  - **PUT**
+    - Update concert
+  - **GET**
+    - Get all concerts
+    - Get concert by venue id
+    - Get concert by artist
+    - Get concert by date
+  - **DELETE**
+    - Delete concert
 </details>
 
 ## Contact Us
