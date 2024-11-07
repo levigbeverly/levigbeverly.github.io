@@ -1,9 +1,9 @@
 ---
 layout: page
 ---
-# Local-Show-Tive API Service
+# Local-Show-Tive
 
-**Local-Show-Tive** is an API-based task list service that enables (who?) to (what?).
+**Local-Show-Tive** is an API service that enables (who?) to (what?).
 
 [value statement]
 
