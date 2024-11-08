@@ -6,7 +6,7 @@ layout: page
 **Local-Show-Tive** is a REST API service that makes local concert planning and searching easy and streamlined. 
 - _Concert-goers_: You can use **Local-Show-Tive** to find a detailed list of upcoming shows in your area.
 - _Venue owners_: You can use **Local-Show-Tive** to share consistent information about your venue.
-- _Artists, managers_, and promoters: You can use **Local-Show-Tive** to post and update information about your upcoming shows
+- _Artists, managers, and promoters_: You can use **Local-Show-Tive** to post and update information about your upcoming shows.
 
 **Local-Show-Tive** allows users to update and query an ongoing database of live music events. 
 
