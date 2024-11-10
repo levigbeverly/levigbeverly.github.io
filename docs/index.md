@@ -55,7 +55,7 @@ To view detailed descriptions the service's resources and individual API calls, 
     - **PUT**
       - [Update venue](references/put-update-venue.md)
     - **GET**
-      - [Get all venues](references/get-venues.md)
+      - [Get venues](references/get-venues.md)
       - [Get venue by name](references/get-venue-by-name.md)
       - [Get venue by id](references/get-venue-by-id.md)
       - [Get venue by city](references/get-venue-by-city.md)
@@ -68,7 +68,7 @@ To view detailed descriptions the service's resources and individual API calls, 
     - **PUT**
       - [Update concert](references/put-update-concert.md)
     - **GET**
-      - [Get all concerts](references/get-concerts.md)
+      - [Get concerts](references/get-concerts.md)
       - [Get concert by venue id](references/get-concert-by-venue-id.md)
       - [Get concert by artist](references/get-concert-by-artist.md)
       - [Get concert by date](references/get-concert-by-date.md)
