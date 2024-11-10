@@ -49,31 +49,64 @@ To view detailed descriptions the service's resources and individual API calls, 
 <details>
   <summary>References</summary>
   
-  - [**venues** resource](references/venues.md)
-    - **POST**
-      - [Add venue](references/post-add-venue.md)
-    - **PUT**
-      - [Update venue](references/put-update-venue.md)
-    - **GET**
-      - [Get venues](references/get-venues.md)
-      - [Get venue by name](references/get-venue-by-name.md)
-      - [Get venue by id](references/get-venue-by-id.md)
-      - [Get venue by city](references/get-venue-by-city.md)
-    - **DELETE**
-      - [Delete venue](references/delete-venue.md)
+<ul>
+  <li><a href="references/venues.md"><strong>venues</strong> resource</a>
+    <ul>
+      <li><strong>POST</strong>
+        <ul>
+          <li><a href="references/post-add-venue.md">Add venue</a></li>
+        </ul>
+      </li>
+      <li><strong>PUT</strong>
+        <ul>
+          <li><a href="references/put-update-venue.md">Update venue</a></li>
+        </ul>
+      </li>
+      <li><strong>GET</strong>
+        <ul>
+          <li><a href="references/get-venues.md">Get venues</a></li>
+          <li><a href="references/get-venue-by-name.md">Get venue by name</a></li>
+          <li><a href="references/get-venue-by-id.md">Get venue by id</a></li>
+          <li><a href="references/get-venue-by-city.md">Get venue by city</a></li>
+        </ul>
+      </li>
+      <li><strong>DELETE</strong>
+        <ul>
+          <li><a href="references/delete-venue.md">Delete venue</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+  <li><a href="references/concerts.md"><strong>concerts</strong> resource</a>
+    <ul>
+      <li><strong>POST</strong>
+        <ul>
+          <li><a href="references/post-add-concert.md">Add concert</a></li>
+        </ul>
+      </li>
+      <li><strong>PUT</strong>
+        <ul>
+          <li><a href="references/put-update-concert.md">Update concert</a></li>
+        </ul>
+      </li>
+      <li><strong>GET</strong>
+        <ul>
+          <li><a href="references/get-concerts.md">Get concerts</a></li>
+          <li><a href="references/get-concert-by-venue-id.md">Get concert by venue id</a></li>
+          <li><a href="references/get-concert-by-artist.md">Get concert by artist</a></li>
+          <li><a href="references/get-concert-by-date.md">Get concert by date</a></li>
+        </ul>
+      </li>
+      <li><strong>DELETE</strong>
+        <ul>
+          <li><a href="references/delete-concert.md">Delete concert</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-  - [**concerts** resource](references/concerts.md)
-    - **POST**
-      - [Add concert](references/post-add-concert.md)
-    - **PUT**
-      - [Update concert](references/put-update-concert.md)
-    - **GET**
-      - [Get concerts](references/get-concerts.md)
-      - [Get concert by venue id](references/get-concert-by-venue-id.md)
-      - [Get concert by artist](references/get-concert-by-artist.md)
-      - [Get concert by date](references/get-concert-by-date.md)
-    - **DELETE**
-      - [Delete concert](references/delete-concert.md)
 </details>
 
 ## Contact Us
