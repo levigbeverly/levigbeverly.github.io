@@ -28,17 +28,26 @@ To view the full list of available tutorials, click **Tutorials** below:
 <details>
   <summary>Tutorials</summary>
   
-  - **venues**
-    - [Add a venue](tutorials/add-a-venue.md)
-    - [Update a venue](tutorials/update-a-venue.md)
-    - [Delete a venue](tutorials/delete-a-venue.md)
- 
-  - **concerts**
-    - [Add a concert](tutorials/add-a-concert.md)
-    - [Change a concert's date and time](tutorials/change-a-concerts-date-and-time.md)
-    - [Search for concerts by venue](tutorials/search-for-concerts-by-venue.md)
-    - [Search for concerts by artist](tutorials/search-for-concerts-by-artist.md)
-    - [Delete a concert](tutorials/delete-a-concert.md)
+<ul>
+  <li><strong>venues</strong>
+    <ul>
+      <li><a href="tutorials/add-a-venue.md">Add a venue</a></li>
+      <li><a href="tutorials/update-a-venue.md">Update a venue</a></li>
+      <li><a href="tutorials/delete-a-venue.md">Delete a venue</a></li>
+    </ul>
+  </li>
+  
+  <li><strong>concerts</strong>
+    <ul>
+      <li><a href="tutorials/add-a-concert.md">Add a concert</a></li>
+      <li><a href="tutorials/change-a-concerts-date-and-time.md">Change a concert's date and time</a></li>
+      <li><a href="tutorials/search-for-concerts-by-venue.md">Search for concerts by venue</a></li>
+      <li><a href="tutorials/search-for-concerts-by-artist.md">Search for concerts by artist</a></li>
+      <li><a href="tutorials/delete-a-concert.md">Delete a concert</a></li>
+    </ul>
+  </li>
+</ul>
+
 </details>
 
 ## References
