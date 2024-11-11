@@ -103,7 +103,7 @@ To view detailed descriptions the service's resources and individual API calls, 
         <ul>
           <li><a href="references/get-concerts.html">Get concerts</a></li>
           <li><a href="references/get-concert-by-venue-id.html">Get concert by venue id</a></li>
-          <li><a href="references/get-concert-by-artist.html">Get concert by artist</li>
+          <li><a href="references/get-concert-by-artist.html">Get concert by artist</a></li>
           <li><a href="references/get-concert-by-date.html">Get concert by date</a></li>
         </ul>
       </li>
