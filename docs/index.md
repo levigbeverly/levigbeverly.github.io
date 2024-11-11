@@ -59,7 +59,7 @@ To view detailed descriptions the service's resources and individual API calls, 
   <summary>References</summary>
   
 <ul>
-  <li><a href="references/venues.md"><strong>venues</strong> resource</a>
+  <li><a href="references/venues.md"><strong>venues</strong></a> resource
     <ul>
       <li><strong>POST</strong>
         <ul>
@@ -87,7 +87,7 @@ To view detailed descriptions the service's resources and individual API calls, 
     </ul>
   </li>
   
-  <li><a href="references/concerts.md"><strong>concerts</strong> resource</a>
+  <li><a href="references/concerts.md"><strong>concerts</strong></a> resource
     <ul>
       <li><strong>POST</strong>
         <ul>
