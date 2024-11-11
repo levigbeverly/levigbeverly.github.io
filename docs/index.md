@@ -21,8 +21,8 @@ If this is your first time setting up and using **Local-Show-Tive**, see [Gettin
 Learn how to do the most common **Local-Show-Tive** tasks:
  - [Add a venue](tutorials/add-a-venue.md)
  - [Add a concert](tutorials/add-a-concert.md)
- - [Search for concerts by venue](tutorials/)
- - [Search for concerts by artist](tutorials/)
+ - [Search for concerts by venue](tutorials/search-for-concerts-by-venue.md)
+ - [Search for concerts by artist](tutorials/search-for-concerts-by-artist.md)
 
 To view the full list of available tutorials, click **Tutorials** below:
 <details>
@@ -101,9 +101,9 @@ To view detailed descriptions the service's resources and individual API calls, 
       </li>
       <li><strong>GET</strong>
         <ul>
-          <li><a href="references/get-concerts.md">Get concerts</a></li>
+          <li>[Get concerts](references/get-concerts.md)</li>
           <li><a href="references/get-concert-by-venue-id.md">Get concert by venue id</a></li>
-          <li><a href="references/get-concert-by-artist.md">Get concert by artist</a></li>
+          <li><a href="references/get-concert-by-artist.md">Get concert by artist</li>
           <li><a href="references/get-concert-by-date.md">Get concert by date</a></li>
         </ul>
       </li>
