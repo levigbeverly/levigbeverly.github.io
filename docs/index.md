@@ -19,10 +19,10 @@ If this is your first time setting up and using **Local-Show-Tive**, see [Gettin
 ## Tutorials
 
 Learn how to do the most common **Local-Show-Tive** tasks:
- - [Add a venue](tutorials/add-a-venue.md)
- - [Add a concert](tutorials/add-a-concert.md)
- - [Search for concerts by venue](tutorials/search-for-concerts-by-venue.md)
- - [Search for concerts by artist](tutorials/search-for-concerts-by-artist.md)
+ - [Add a venue](tutorials/add-a-venue.html)
+ - [Add a concert](tutorials/add-a-concert.html)
+ - [Search for concerts by venue](tutorials/search-for-concerts-by-venue.html)
+ - [Search for concerts by artist](tutorials/search-for-concerts-by-artist.html)
 
 To view the full list of available tutorials, click **Tutorials** below:
 <details>
@@ -31,19 +31,19 @@ To view the full list of available tutorials, click **Tutorials** below:
 <ul>
   <li><strong>venues</strong>
     <ul>
-      <li><a href="tutorials/add-a-venue.md">Add a venue</a></li>
-      <li><a href="tutorials/update-a-venue.md">Update a venue</a></li>
-      <li><a href="tutorials/delete-a-venue.md">Delete a venue</a></li>
+      <li><a href="tutorials/add-a-venue.html">Add a venue</a></li>
+      <li><a href="tutorials/update-a-venue.html">Update a venue</a></li>
+      <li><a href="tutorials/delete-a-venue.html">Delete a venue</a></li>
     </ul>
   </li>
   
   <li><strong>concerts</strong>
     <ul>
-      <li><a href="tutorials/add-a-concert.md">Add a concert</a></li>
-      <li><a href="tutorials/change-a-concerts-date-and-time.md">Change a concert's date and time</a></li>
-      <li><a href="tutorials/search-for-concerts-by-venue.md">Search for concerts by venue</a></li>
-      <li><a href="tutorials/search-for-concerts-by-artist.md">Search for concerts by artist</a></li>
-      <li><a href="tutorials/delete-a-concert.md">Delete a concert</a></li>
+      <li><a href="tutorials/add-a-concert.html">Add a concert</a></li>
+      <li><a href="tutorials/change-a-concerts-date-and-time.html">Change a concert's date and time</a></li>
+      <li><a href="tutorials/search-for-concerts-by-venue.html">Search for concerts by venue</a></li>
+      <li><a href="tutorials/search-for-concerts-by-artist.html">Search for concerts by artist</a></li>
+      <li><a href="tutorials/delete-a-concert.html">Delete a concert</a></li>
     </ul>
   </li>
 </ul>
@@ -52,64 +52,64 @@ To view the full list of available tutorials, click **Tutorials** below:
 
 ## References
 
-All show-related actions are performed under the [`shows`]() resource, and all venue-related actions are performed with the [`venues`]() resource.
+All venue-related actions are performed under the [`venues`](references/venues.md) resource, and all concert-related actions are performed with the [`concerts`](references/concerts.md) resource.
 
 To view detailed descriptions the service's resources and individual API calls, click **References** below:
 <details>
   <summary>References</summary>
   
 <ul>
-  <li><a href="references/venues.md"><strong>venues</strong></a> resource
+  <li><a href="references/venues.html"><strong>venues</strong></a> resource
     <ul>
       <li><strong>POST</strong>
         <ul>
-          <li><a href="references/post-add-venue.md">Add venue</a></li>
+          <li><a href="references/post-add-venue.html">Add venue</a></li>
         </ul>
       </li>
       <li><strong>PUT</strong>
         <ul>
-          <li><a href="references/put-update-venue.md">Update venue</a></li>
+          <li><a href="references/put-update-venue.html">Update venue</a></li>
         </ul>
       </li>
       <li><strong>GET</strong>
         <ul>
-          <li><a href="references/get-venues.md">Get venues</a></li>
-          <li><a href="references/get-venue-by-name.md">Get venue by name</a></li>
-          <li><a href="references/get-venue-by-id.md">Get venue by id</a></li>
-          <li><a href="references/get-venue-by-city.md">Get venue by city</a></li>
+          <li><a href="references/get-venues.html">Get venues</a></li>
+          <li><a href="references/get-venue-by-name.html">Get venue by name</a></li>
+          <li><a href="references/get-venue-by-id.html">Get venue by id</a></li>
+          <li><a href="references/get-venue-by-city.html">Get venue by city</a></li>
         </ul>
       </li>
       <li><strong>DELETE</strong>
         <ul>
-          <li><a href="references/delete-venue.md">Delete venue</a></li>
+          <li><a href="references/delete-venue.html">Delete venue</a></li>
         </ul>
       </li>
     </ul>
   </li>
   
-  <li><a href="references/concerts.md"><strong>concerts</strong></a> resource
+  <li><a href="references/concerts.html"><strong>concerts</strong></a> resource
     <ul>
       <li><strong>POST</strong>
         <ul>
-          <li><a href="references/post-add-concert.md">Add concert</a></li>
+          <li><a href="references/post-add-concert.html">Add concert</a></li>
         </ul>
       </li>
       <li><strong>PUT</strong>
         <ul>
-          <li><a href="references/put-update-concert.md">Update concert</a></li>
+          <li><a href="references/put-update-concert.html">Update concert</a></li>
         </ul>
       </li>
       <li><strong>GET</strong>
         <ul>
           <li><a href="references/get-concerts.html">Get concerts</a></li>
-          <li><a href="references/get-concert-by-venue-id.md">Get concert by venue id</a></li>
-          <li><a href="references/get-concert-by-artist.md">Get concert by artist</li>
-          <li><a href="references/get-concert-by-date.md">Get concert by date</a></li>
+          <li><a href="references/get-concert-by-venue-id.html">Get concert by venue id</a></li>
+          <li><a href="references/get-concert-by-artist.html">Get concert by artist</li>
+          <li><a href="references/get-concert-by-date.html">Get concert by date</a></li>
         </ul>
       </li>
       <li><strong>DELETE</strong>
         <ul>
-          <li><a href="references/delete-concert.md">Delete concert</a></li>
+          <li><a href="references/delete-concert.html">Delete concert</a></li>
         </ul>
       </li>
     </ul>
