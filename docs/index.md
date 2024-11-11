@@ -101,7 +101,7 @@ To view detailed descriptions the service's resources and individual API calls, 
       </li>
       <li><strong>GET</strong>
         <ul>
-          <li>[Get concerts](references/get-concerts.md)</li>
+          <li><a href="references/get-concerts.md">Get concerts</a></li>
           <li><a href="references/get-concert-by-venue-id.md">Get concert by venue id</a></li>
           <li><a href="references/get-concert-by-artist.md">Get concert by artist</li>
           <li><a href="references/get-concert-by-date.md">Get concert by date</a></li>
