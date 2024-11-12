@@ -75,9 +75,3 @@ Use the following steps to quickly identify and delete a venue in **Local-Show-T
    Postman returns a `200 OK` message, indicating that you successfully deleted the venue.
 
    If you want to validate the deletion, re-run the GET request from step 3. The deleted venue does not appear in the response body.
-
-## Learn more
-
-See the following user-related tutorials to learn more about managing **Local-Show-Tive** venues:
-
-- 
