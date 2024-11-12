@@ -12,7 +12,7 @@ layout: page
 
 ## Description
 
-Returns an array of [`venues`](venues.md) objects. The array contains all venues that have been created with Local-Show-Tive.
+Returns an array of [`venues`](venues.md) objects. The array contains all venues that have been created with **Local-Show-Tive**.
 
 `Get venues` does not have a request body, parameters, or headers.
 
