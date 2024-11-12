@@ -12,7 +12,9 @@ PUT {base_url}/venues/{id}
 
 ## Description
 
-Updates an existing `venues` object. Enter the venue information to update in the response body.
+Updates an existing `venues` object. Specify the venue to update by entering the venue id at the end of the request URL.
+
+Enter the venue information to update in the response body.
 
 ## Request properties
 
@@ -27,15 +29,13 @@ You can specify any combination the following venue details in the `Update venue
 
 ## Request body example
 
-The following request body example will add a new venue - `The Depot` - to the **Local-Show-Tive** database. The Depot is located in South Salt Lake, UT, is an indoor venue, and has an age restriction of 21+.
+The following request body example will update the specified venue with a venue type of `outdoor`:
 
 ```js
 {
   "name": "The Depot",
   "city": "South Salt Lake, UT",
-  "venue_type": "outdoor",
-  "age_restriction": "21+",
-  "id": 5
+  "
 }
 
 ```
