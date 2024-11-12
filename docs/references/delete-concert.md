@@ -12,13 +12,13 @@ DELETE {base_url}/concerts/{id}
 
 ## Description
 
-Deletes the specified `concerts` object. Specify the concert to delete by entering the concert 'id' at the end of the request URL.
+Deletes the specified `concerts` object. Specify the concert to delete by entering the concert `id` at the end of the request URL.
 
 `Get concerts` does not have a request body, parameters, or headers.
 
 ## Return body example
 
-The following example of **Delete concert** returns a confirmation that the specified concert was deleted:
+The following example of `Delete concert` returns a confirmation that the specified concert was deleted:
 
 ```js
 {
