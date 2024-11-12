@@ -33,20 +33,18 @@ The following request body example will update the specified venue with a venue 
 
 ```js
 {
-  "name": "The Depot",
-  "city": "South Salt Lake, UT",
-  "
+  "venue type": "outdoor"
 }
 
 ```
 
 ## Return body example
 
-The following example of `Create venue` returns a confirmation that the new venue was created:
+The following example of `Update venue` returns a confirmation that the new venue was updated:
 
 ```js
 {
-  "message": "Resource created successfully."
+  "message": "Resource updated successfully."
 }
 
 ```
