@@ -27,7 +27,7 @@ Specify the following venue details in the `Create venue` response body:
 
 ## Request body example
 
-The following request body example will add a new venue - `The Depot` - to the **Local-Show-Tive** database. The Depot is located in South Salt Lake, UT, is an indoor venue, and as an age restriction of 21+.
+The following request body example will add a new venue - `The Depot` - to the **Local-Show-Tive** database. The Depot is located in South Salt Lake, UT, is an indoor venue, and has an age restriction of 21+.
 
 ```js
 {
