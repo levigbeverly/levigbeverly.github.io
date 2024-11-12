@@ -21,7 +21,7 @@ Specify the following venue details in the `Create concert` response body:
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
 | `venue_id` | integer | Enter the `venue_id` of the venue the concert is taking place at. |
-| `artist` | string | Entwr the name of the artist performing at the concert. |
+| `artist` | string | Enter the name of the artist performing at the concert. |
 | `date` | string | Enter the date the concert takes place on in `YYYY-MM-DD` format. |
 | `time` | string | Enter the time the concert takes place at in the following format: {time}{AM/PM} {abbreviated time zone} (for example, `8:00PM MST`).|
 | `ticket price` | string | Enter the concert ticket price in the following format: {currency type}{amount} (for example, `$26`).|
