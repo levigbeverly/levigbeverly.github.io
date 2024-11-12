@@ -18,7 +18,7 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
     ```shell
     cd <your-github-workspace>/local-show-tive/api
-    json-server -w local-show-tive-db-source.json
+    json-server -w local-show-tive-source.json
     ```
     You must keep this window open for the remainder of the process.
 
@@ -49,7 +49,7 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
     ```shell
     cd <your-github-workspace>/local-show-tive/api
-    json-server -w local-show-tive-db-source.json
+    json-server -w local-show-tive-source.json
     ```
     You must keep this window open for the remainder of the process.
 
