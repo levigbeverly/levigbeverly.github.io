@@ -18,7 +18,7 @@ Returns an array of [`concerts`](concerts.md) objects. The array contains all co
 
 ## Return body example
 
-The following example of **Get concerts** returns an array containing five concerts:
+The following example of `Get concerts` returns an array containing five concerts:
 
 ```js
 "concerts": 
