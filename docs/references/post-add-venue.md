@@ -23,8 +23,7 @@ Specify the following venue details in the `Create venue` response body:
 | `name` | string | Enter the name of the venue. |
 | `city` | string | Enter the city and state (abbreviated) the venue is located in. |
 | `type` | string | Indicate whether the venue is indoor or outdoor. The valid options are `indoor` and `outdoor`. |
-| `age restriction` | string | Indicate whether the venue has an age restriction. The valid options are  |
-| `id` | integer | The venue id. This id is used to specify the venue in `concerts` responses. |
+| `age restriction` | string | Indicate whether the venue has an age restriction. The valid options are `all ages` and `21+`.  |
 
 ## Request body example
 
