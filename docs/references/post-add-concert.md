@@ -28,7 +28,7 @@ Specify the following venue details in the `Create concert` response body:
 
 ## Request body example
 
-The following request body example will add a new concert to the **Local-Show-Tive** database. The concert is held at the `venues` object whose `id` is `4`. The artist performing is Joy Oladokun, the concert takes place on March 3, 2025 at 8:00PM MST, and the tixket price is $26.
+The following request body example will add a new concert to the **Local-Show-Tive** database. The concert is held at the `venues` object whose `id` is `4`. The artist performing is Joy Oladokun, the concert takes place on March 3, 2025 at 8:00PM MST, and the ticket price is $26.
 
 ```js
   {
