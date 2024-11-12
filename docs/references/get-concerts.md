@@ -12,7 +12,7 @@ layout: page
 
 ## Description
 
-Returns an array of [`concerts`](concerts.md) objects. The array contains all concerts that have been created with Local-Show-Tive.
+Returns an array of [`concerts`](concerts.md) objects. The array contains all concerts that have been created with **Local-Show-Tive**.
 
 `Get concerts` does not have a request body, parameters, or headers.
 
