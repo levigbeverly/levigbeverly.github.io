@@ -43,7 +43,7 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
     If you want to validate the deletion, re-run the GET command from step 2. The deleted concert does not appear in the response body.
 
-## Delete a user in Postman
+## Delete a concert in Postman
 
 1. In your preferred command line tool, start **Local-Show-Tive** locally by entering the following command:
 
