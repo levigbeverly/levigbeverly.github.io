@@ -14,15 +14,21 @@ POST {base_url}/venues
 
 Creates a new `venues` object. Enter the venue name and related information in the request response body.
 
-## Request body
+## Request properties
 
 Specify the following venue details in the `Create venue` response body:
 
-
+| Property name | Type | Description |
+| ------------- | ----------- | ----------- |
+| `name` | string | Enter the name of the venue. |
+| `city` | string | Enter the city and state (abbreviated) the venue is located in. |
+| `type` | string | Indicate whether the venue is indoor or outdoor. The valid options are `indoor` and `outdoor`. |
+| `age restriction` | string | Indicate whether the venue has an age restriction. The valid options are  |
+| `id` | integer | The venue id. This id is used to specify the venue in `concerts` responses. |
 
 ## Request body example
 
-The following request body example will add a new venue - `The Depot`, and it's basic information - to the **Local-Show-Tive** database:
+The following request body example will add a new venue - `The Depot`, and it's basic information - to the **Local-Show-Tive** database. The service automatically assigns the venue with an `id` of `5`.
 
 ```js
 {
@@ -30,7 +36,7 @@ The following request body example will add a new venue - `The Depot`, and it's 
   "city": "South Salt Lake, UT",
   "venue_type": "indoor",
   "age_restriction": "21+",
-  "id": 1
+  "id": 5
 }
 
 ```
