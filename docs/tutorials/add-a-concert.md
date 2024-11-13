@@ -25,7 +25,7 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 2. In a separate window of your command line tool, type in the following POST command to create the new concert:
 
     ```shell
-    curl -X POST {base_url}/concerts -H "Content-Type: application/json" -d '{"name": "Baltimore Soundstage", "city": "Baltimore, MD", "concert type": "indoor", "age restriction": "21+"}'
+    curl -X POST {base_url}/concerts -H "Content-Type: application/json" -d '{"venue_id": 1, "artist": "Switchfoot", "date": "2025-07-06", "time": "8:00PM MST", "ticket price": "$40"}'
     ```
     _**Note:** When run locally for testing, the `{base_url}` is generally `http://localhost:3000`._
 
@@ -69,10 +69,11 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
    ```js
    {
-   "name": "The Fillmore",
-   "city": "Silver Spring, MD",
-   "concert type": "indoor",
-   "age restriction": "all ages"
+   "venue_id": 1,
+   "artist": "Switchfoot",
+   "date": "2025-07-06",
+   "time": "8:00PM MST",
+   "ticket price": "$40"
    }
    ```
    You can change any of the response body values as you see fit. For more information, see the [Add concert reference](../references/post-add-concert.md).
