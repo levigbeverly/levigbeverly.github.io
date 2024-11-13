@@ -2,26 +2,26 @@
 layout: page
 ---
 
-# Get venue by name
+# Get venue by city
 
 ## Base endpoint
 
 ```shell
-{base_url}/venues?name={venue%20name}
+{base_url}/venues?city={city%20name,%20state}
 ```
 
 ## Description
 
-Returns details for a venue specified by name. Specify the venue by entering the venue name at the end of the request URL. If the venue name contains spaces, you must fill each space with `%20`.
+Returns details for a venue specified by name. Specify the venue by entering the venue name at the end of the request URL. When specifying the city, you must include the state abbreviation, fill every space with `%20`, and replace any commas with `%2C`.
 
-`Get venue by name` does not have a request body, parameters, or headers.
+`Get venue by city` does not have a request body, parameters, or headers.
 
 ## Return body example
 
 In this example the user runs the following command:
 
 ```shell
-{base_url}/venues?name={The%20Depot}
+{base_url}/venues?city={South%20Salt%20Lake%2C%20UT}
 ```
 
 **Local-Show-Tive** returns the following message:
