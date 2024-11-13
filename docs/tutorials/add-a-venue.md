@@ -22,18 +22,20 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
     ```
     You must keep this window open for the remainder of the process.
 
-2. In a separate window of your command line tool, enter the following POST command to create the new venue:
+2. In a separate window of your command line tool, type in the following POST command to create the new venue:
 
     ```shell
-    curl POST {base_url}/venues
+    curl -X POST {base_url}/venues -H "Content-Type: application/json" -d '{"name": "Baltimore Soundstage", "city": "Baltimore, MD", "venue type": "indoor", "age restriction": "21+"}'
     ```
     _**Note:** When run locally for testing, the `{base_url}` is generally `http://localhost:3000`._
 
-3.  [WIP, add details about the request body and running the command]
+   You can change any of the `-d` response body values as you see fit. For more information, see the [Add venue reference](../references/post-add-venue.md).
 
-    The command line tool returns a message indicating that you successfully created the venue.
+4.  Run the command.
 
-4. To validate that the new venue was successfully added, run the following GET command:
+    The command line tool returns a message indicating that you successfully created the venue. The return message lists the new venue, the request body values you specified, and an automatically assigned `id` value.
+
+5. To validate that the new venue was successfully added, run the following GET command:
 
     ```shell
     curl {base_url}/venues
@@ -59,13 +61,27 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
     ```
     _**Note:** When run locally for testing, the `{base_url}` is generally `http://localhost:3000`._
 
-4. [WIP, add details about the request body and running the command]
+4. Click the **Body** tab.
 
-5. Click **Send**. 
+5. In the **Body** menu, select the **raw** radio button.
 
-   Postman returns a `200 OK` message.
+6. Enter the following response body values:
 
-6. If you want to validate that the new venue was succesfully added, run the following GET request in Postman:
+   ```js
+   {
+   "name": "The Fillmore",
+   "city": "Silver Spring, MD",
+   "venue type": "indoor",
+   "age restriction": "all ages"
+   }
+   ```
+   You can change any of the response body values as you see fit. For more information, see the [Add venue reference](../references/post-add-venue.md).
+
+8. Click **Send**. 
+
+   Postman returns a `201 Created` message. The return message lists the new venue, the request body values you specified, and an automatically assigned `id` value.
+
+9. If you want to validate that the new venue was succesfully added, run the following GET request in Postman:
 
    ```shell
     {base_url}/venues
@@ -74,4 +90,6 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
 ## Related tutorials
 
-[WIP]
+For more tutorials about managing venues, see the following topics:
+- [Update a venue](update-a-venue.md)
+- [Delete a venue](delete-a-venue.md)
