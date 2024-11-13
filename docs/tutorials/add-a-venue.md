@@ -4,7 +4,7 @@ layout: page
 
 # Tutorial: Add a venue 
 
-Use the following steps to quickly add a new venue in **Local-Show-Tive**. You can perform these steps using [cURL commands](#delete-a-venue-with-curl-commands) or in the [Postman application](#delete-a-venue-in-postman).
+Use the following steps to quickly add a new venue in **Local-Show-Tive**. You can perform these steps using [cURL commands](#add-a-venue-with-curl-commands) or in the [Postman application](#add-a-venue-in-postman).
 
 You will have to use a command-line tool to complete the tutorial. If you are a first-time user, we recommend using Git Bash. If you use a different command-line tool, you may need to adapt the provided syntax for your tool of choice.
 
