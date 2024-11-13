@@ -4,7 +4,7 @@ layout: page
 
 # Tutorial: Add a concert 
 
-Use the following steps to quickly add a new concert in **Local-Show-Tive**. You can perform these steps using [cURL commands](#delete-a-concert-with-curl-commands) or in the [Postman application](#delete-a-concert-in-postman).
+Use the following steps to quickly add a new concert in **Local-Show-Tive**. You can perform these steps using [cURL commands](#add-a-concert-with-curl-commands) or in the [Postman application](#add-a-concert-in-postman).
 
 You will have to use a command-line tool to complete the tutorial. If you are a first-time user, we recommend using Git Bash. If you use a different command-line tool, you may need to adapt the provided syntax for your tool of choice.
 
@@ -22,18 +22,20 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
     ```
     You must keep this window open for the remainder of the process.
 
-2. In a separate window of your command line tool, enter the following POST command to create the new concert:
+2. In a separate window of your command line tool, type in the following POST command to create the new concert:
 
     ```shell
-    curl POST {base_url}/concerts
+    curl -X POST {base_url}/concerts -H "Content-Type: application/json" -d '{"name": "Baltimore Soundstage", "city": "Baltimore, MD", "concert type": "indoor", "age restriction": "21+"}'
     ```
     _**Note:** When run locally for testing, the `{base_url}` is generally `http://localhost:3000`._
 
-3.  [WIP, add details about the request body and running the command]
+   You can change any of the `-d` response body values as you see fit. For more information, see the [Add concert reference](../references/post-add-concert.md).
 
-    The command line tool returns a message indicating that you successfully created the concert.
+4.  Run the command.
 
-4. To validate that the new concert was successfully added, run the following GET command:
+    The command line tool returns a message indicating that you successfully created the concert. The return message lists the new concert, the request body values you specified, and an automatically assigned `id` value.
+
+5. To validate that the new concert was successfully added, run the following GET command:
 
     ```shell
     curl {base_url}/concerts
@@ -59,13 +61,27 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
     ```
     _**Note:** When run locally for testing, the `{base_url}` is generally `http://localhost:3000`._
 
-4. [WIP, add details about the request body and running the command]
+4. Click the **Body** tab.
 
-5. Click **Send**. 
+5. In the **Body** menu, select the **raw** radio button.
 
-   Postman returns a `200 OK` message.
+6. In the space below the **raw** radio button, enter the following response body values:
 
-6. If you want to validate that the new concert was succesfully added, run the following GET request in Postman:
+   ```js
+   {
+   "name": "The Fillmore",
+   "city": "Silver Spring, MD",
+   "concert type": "indoor",
+   "age restriction": "all ages"
+   }
+   ```
+   You can change any of the response body values as you see fit. For more information, see the [Add concert reference](../references/post-add-concert.md).
+
+8. Click **Send**. 
+
+   Postman returns a `201 Created` message. The return message lists the new concert, the request body values you specified, and an automatically assigned `id` value.
+
+9. If you want to validate that the new concert was succesfully added, run the following GET request in Postman:
 
    ```shell
     {base_url}/concerts
@@ -74,4 +90,6 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
 ## Related tutorials
 
-[WIP]
+For more tutorials about managing concerts, see the following topics:
+- [Update a concert](update-a-concert.md)
+- [Delete a concert](delete-a-concert.md)
