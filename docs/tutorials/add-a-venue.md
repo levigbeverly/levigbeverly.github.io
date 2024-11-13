@@ -65,7 +65,7 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
 5. In the **Body** menu, select the **raw** radio button.
 
-6. Enter the following response body values:
+6. In the space below the **raw** radio button, enter the following response body values:
 
    ```js
    {
