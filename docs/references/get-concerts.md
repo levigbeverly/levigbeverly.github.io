@@ -78,7 +78,6 @@ The following example of `Get concerts` returns an array containing five concert
 | `ticket price` | string | The concert ticket price. |
 | `id` | integer | The concert id. |
 
-
 ## Return statuses
 
 | Status value | Return status | Description |

@@ -60,10 +60,9 @@ The following example of **Get venues** returns an array containing four venues:
 | ------------- | ----------- | ----------- |
 | `name` | string | The name of the venue. |
 | `city` | string | The city and state the venue is located in. |
-| `type` | string | Indicates whether the venue is indoor or outdoor. |
+| `venue type` | string | Indicates whether the venue is indoor or outdoor. |
 | `age restriction` | string | Indicates whether the venue has an age restriction. |
 | `id` | integer | The venue id. This id is used to specify the venue in `concerts` responses. |
-
 
 ## Return statuses
 
