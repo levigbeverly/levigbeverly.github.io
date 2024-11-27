@@ -40,7 +40,7 @@ To view the full list of available tutorials, click **Tutorials** below:
   <li><strong>concerts</strong>
     <ul>
       <li><a href="tutorials/add-a-concert.html">Add a concert</a></li>
-      <li><a href="tutorials/change-a-concerts-date-and-time.html">Change a concert's date and time</a></li>
+      <li><a href="tutorials/update-a-concert.html">Update a concert</a></li>
       <li><a href="tutorials/search-for-concerts-by-venue.html">Search for concerts by venue</a></li>
       <li><a href="tutorials/search-for-concerts-by-artist.html">Search for concerts by artist</a></li>
       <li><a href="tutorials/delete-a-concert.html">Delete a concert</a></li>

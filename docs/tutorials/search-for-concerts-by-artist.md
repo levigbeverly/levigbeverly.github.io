@@ -114,6 +114,6 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
 
 For more concert tutorials, see the following topics:
 - [Add a concert](add-a-concert.md)
-- [Change a concert's date and time](change-a-concerts-date-and-time.md)
+- [Update a concert](update-a-concert.md)
 - [Search for concerts by venue](search-for-concerts-by-venue.md)
 - [Delete a concert](delete-a-concert.md)
