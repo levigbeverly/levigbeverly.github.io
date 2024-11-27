@@ -89,8 +89,10 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
     ```
    The new concert appears in the response body.
 
-## Related tutorials
-
-For more tutorials about managing concerts, see the following topics:
-- [Update a concert](update-a-concert.md)
-- [Delete a concert](delete-a-concert.md)
+   ## Related tutorials
+   
+   For more concert tutorials, see the following topics:
+   - [Update a concert](update-a-concert.md)
+   - [Search for concerts by artist](serach-for-concerts-by-artist.md)
+   - [Search for concerts by venue](search-for-concerts-by-venue.md)
+   - [Delete a concert](delete-a-concert.md)

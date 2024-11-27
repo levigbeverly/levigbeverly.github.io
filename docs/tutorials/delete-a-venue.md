@@ -79,3 +79,9 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
    Postman returns a `200 OK` message, indicating that you successfully deleted the venue.
 
    If you want to validate the deletion, re-run the GET request from step 3. The deleted venue does not appear in the response body.
+
+## Related tutorials
+
+For more tutorials about managing venues, see the following topics:
+- [Add a venue](add-a-venue.md)
+- [Update a venue](update-a-venue.md)

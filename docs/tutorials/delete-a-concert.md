@@ -79,3 +79,11 @@ _**Note:** This tutorial assumes that you have already completed the **Local-Sho
    Postman returns a `200 OK` message, indicating that you successfully deleted the concert.
 
    If you want to validate the deletion, re-run the GET request from step 3. The deleted concert does not appear in the response body.
+
+   ## Related tutorials
+   
+   For more concert tutorials, see the following topics:
+   - [Add a concert](add-a-concert.md)
+   - [Update a concert](update-a-concert.md)
+   - [Search for concerts by artist](serach-for-concerts-by-artist.md)
+   - [Search for concerts by venue](search-for-concerts-by-venue.md)

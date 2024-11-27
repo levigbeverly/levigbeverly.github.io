@@ -31,11 +31,11 @@
   ],
   "concerts": [
     {
-      "venue_id": 2,
+      "venue_id": "2",
       "artist": "Tank & The Bangas",
-      "date": "2025-01-18",
-      "time": "8:00PM MST",
-      "ticket price": "$32",
+      "date": "2025-02-01",
+      "time": "7:00PM MST",
+      "ticket price": "$40",
       "id": 1
     },
     {
