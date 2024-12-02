@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Get venue by name
+parent: Venues
+nav_order: 5
 ---
 
 # Get venue by name
