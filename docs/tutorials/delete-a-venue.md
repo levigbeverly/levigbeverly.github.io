@@ -1,5 +1,6 @@
 ---
-layout: page
+parent: Tutorials
+nav_order: 3
 ---
 
 # Tutorial: Delete a venue 
