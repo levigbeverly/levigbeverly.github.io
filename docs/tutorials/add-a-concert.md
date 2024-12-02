@@ -1,4 +1,5 @@
 ---
+title: Add a concert
 parent: Tutorials
 nav_order: 4
 ---
