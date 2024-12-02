@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Quickstart
+nav_order: 3
+has_toc: false
 ---
 # Quickstart
 
