@@ -1,4 +1,5 @@
 ---
+title: Search for concerts by venue
 parent: Tutorials
 nav_order: 6
 ---
