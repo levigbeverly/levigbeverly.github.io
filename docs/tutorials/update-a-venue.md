@@ -1,4 +1,5 @@
 ---
+title: Update a venue
 parent: Tutorials
 nav_order: 2
 ---
