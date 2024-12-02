@@ -1,4 +1,5 @@
 ---
+title: Delete a concert
 parent: Tutorials
 nav_order: 8
 ---
