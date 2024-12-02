@@ -3,7 +3,7 @@ layout: page
 ---
 # Local-Show-Tive
 
-**Local-Show-Tive** is a REST API service that makes local concert planning and searching in the US easy and streamlined. 
+**Local-Show-Tive** is a REST API service that makes local concert planning and searching in the United States easy and streamlined. 
 - _Concert-goers_: You can use **Local-Show-Tive** to find a detailed list of upcoming shows in your area.
 - _Venue owners_: You can use **Local-Show-Tive** to share consistent information about your venue.
 - _Artists, managers, and promoters_: You can use **Local-Show-Tive** to post and update information about your upcoming shows.
@@ -76,9 +76,9 @@ To view detailed descriptions the service's resources and individual API calls, 
       <li><strong>GET</strong>
         <ul>
           <li><a href="references/get-venues.html">Get venues</a></li>
+          <li><a href="references/get-venue-details.html">Get venue details</a></li>
           <li><a href="references/get-venue-by-name.html">Get venue by name</a></li>
-          <li><a href="references/get-venue-by-id.html">Get venue by id</a></li>
-          <li><a href="references/get-venue-by-city.html">Get venue by city</a></li>
+          <li><a href="references/get-venues-by-city.html">Get venues by city</a></li>
         </ul>
       </li>
       <li><strong>DELETE</strong>
@@ -104,9 +104,10 @@ To view detailed descriptions the service's resources and individual API calls, 
       <li><strong>GET</strong>
         <ul>
           <li><a href="references/get-concerts.html">Get concerts</a></li>
-          <li><a href="references/get-concert-by-venue-id.html">Get concert by venue id</a></li>
-          <li><a href="references/get-concert-by-artist.html">Get concert by artist</a></li>
-          <li><a href="references/get-concert-by-date.html">Get concert by date</a></li>
+          <li><a href="references/get-concert-details.html">Get concert details</a></li>
+          <li><a href="references/get-concerts-by-venue-id.html">Get concerts by venue id</a></li>
+          <li><a href="references/get-concerts-by-artist.html">Get concerts by artist</a></li>
+          <li><a href="references/get-concerts-by-date.html">Get concerts by date</a></li>
         </ul>
       </li>
       <li><strong>DELETE</strong>
