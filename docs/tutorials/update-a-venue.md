@@ -1,5 +1,6 @@
 ---
-layout: page
+parent: Tutorials
+nav_order: 2
 ---
 
 # Tutorial: Update a venue
