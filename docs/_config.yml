@@ -1,4 +1,4 @@
-title: "Local-Show-Tive API"
+title: "Local-Show-Tive API Service"
 remote_theme: just-the-docs/just-the-docs
 color_scheme: "light_contrast"
 search_enabled: false
@@ -6,4 +6,3 @@ callouts:
   note:
     title: Note
     color: blue
-
