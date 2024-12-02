@@ -1,5 +1,6 @@
 ---
-layout: page
+parent: Tutorials
+nav_order: 4
 ---
 
 # Tutorial: Add a concert 
