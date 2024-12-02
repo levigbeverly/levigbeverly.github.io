@@ -1,5 +1,8 @@
 ---
-layout: page
+---
+title: Add concert
+parent: Concerts
+nav_order: 1
 ---
 
 # Add concert
