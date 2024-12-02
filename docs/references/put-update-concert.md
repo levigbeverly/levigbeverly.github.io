@@ -1,6 +1,9 @@
 ---
-layout: page
+title: Update concert
+parent: Concerts
+nav_order: 2
 ---
+
 
 # Update concert
 
