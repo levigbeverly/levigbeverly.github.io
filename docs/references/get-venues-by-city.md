@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Get venue by city
+parent: Venues
+nav_order: 6
 ---
 
 # Get venue by city
