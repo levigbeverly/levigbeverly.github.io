@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Delete concert
+parent: Concerts
+nav_order: 8
 ---
 
 # Delete concert
