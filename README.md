@@ -1,3 +1,3 @@
 # local-show-tive
 
-To view the Local-Show-Tive API docs, see levigbeverly.github.io/.
+To view the Local-Show-Tive API docs, see [levigbeverly.github.io/](levigbeverly.github.io/).
