@@ -1,5 +1,4 @@
 ---
----
 title: Add concert
 parent: Concerts
 nav_order: 1
