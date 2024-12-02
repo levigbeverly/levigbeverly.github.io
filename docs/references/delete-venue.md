@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Delete venue
+parent: Venues
+nav_order: 3
 ---
 
 # Delete venue
