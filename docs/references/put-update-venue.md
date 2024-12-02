@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Update venue
+parent: Venues
+nav_order: 2
 ---
 
 # Update venue
