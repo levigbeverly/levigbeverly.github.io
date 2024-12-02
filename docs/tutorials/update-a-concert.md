@@ -1,4 +1,5 @@
 ---
+title: Update a concert
 parent: Tutorials
 nav_order: 5
 ---
