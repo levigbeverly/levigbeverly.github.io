@@ -1,4 +1,5 @@
 ---
+title: Search for concerts by artist
 parent: Tutorials
 nav_order: 7
 ---
