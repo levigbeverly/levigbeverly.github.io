@@ -1,4 +1,5 @@
 ---
+title: Delete a venue
 parent: Tutorials
 nav_order: 3
 ---
