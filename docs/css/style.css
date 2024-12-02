@@ -1,0 +1,10 @@
+---
+---
+
+@import 'jekyll-theme-cayman';
+
+/*levi - custom styles*/
+.site-footer
+{
+text-align: center;
+}
