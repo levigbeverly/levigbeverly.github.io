@@ -1,5 +1,6 @@
 ---
-layout: page
+parent: Tutorials
+nav_order: 8
 ---
 
 # Tutorial: Delete a concert 
