@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Get concerts
+parent: Concerts
+nav_order: 3
 ---
 
 # Get concerts
