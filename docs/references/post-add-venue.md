@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Add venue
+parent: Venues
+nav_order: 1
 ---
 
 # Add venue
