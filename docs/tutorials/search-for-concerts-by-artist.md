@@ -1,5 +1,6 @@
 ---
-layout: page
+parent: Tutorials
+nav_order: 7
 ---
 
 # Tutorial: Search for concerts by artist
