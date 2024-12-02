@@ -1,5 +1,8 @@
 ---
-layout: page
+title: Concerts
+parent: References
+nav_order: 2
+has_toc: false
 ---
 
 # `concerts` resource
