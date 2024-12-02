@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Overview
+layout: home
+nav_order: 1
 ---
 # Local-Show-Tive
 
