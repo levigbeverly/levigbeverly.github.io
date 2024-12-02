@@ -1,5 +1,7 @@
 ---
-layout: page
+title: Get concerts by venue id
+parent: Concerts
+nav_order: 5
 ---
 
 # Get concerts by venue_id
