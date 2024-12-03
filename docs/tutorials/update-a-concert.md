@@ -12,7 +12,7 @@ You will have to use a command-line tool to complete the tutorial. If you are a 
 
 The tutorial will take about five minutes. 
 
-_**Note:** This tutorial assumes that you have already completed the **Local-Show-Tive** getting started process. If you have not, complete the steps described in [Getting started](../getting-started.md), then return to this tutorial._
+_**Note:** These steps assume that you have already completed the **Local-Show-Tive** getting started process. If you have not, complete the steps described in [Getting Started](getting-started.md), then return to this topic._
 
 ## Update a concert with cURL commands
 
