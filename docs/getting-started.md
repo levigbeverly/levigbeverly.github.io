@@ -15,7 +15,7 @@ To begin using **Local-Show-Tive**, you need to a [GitHub account](https://githu
 
 You must also install the following packages on your machine. We recommend opening the links in separate brower tabs before you start installing the software.
 
-* [Git](https://docs.github.com/en/get-started/quickstart/set-up-git) (this includes Git Bash, which we recommend using for running **Local-Show-Tive** commands)
+* [Git](https://docs.github.com/en/get-started/quickstart/set-up-git) (this includes Git Bash, which we recommend using for making **Local-Show-Tive** API calls)
 * A fork of the [Local-Show-Tive repo](https://github.com/levigbeverly/local-show-tive)
 * A current/LTS version of `node.js`
 * A current version of [json-server](https://www.npmjs.com/package/json-server)
