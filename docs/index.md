@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 <p>
-  <img src="img/local-show-tive.jpg" alt="Local-Show-Tive Train Logo" style="width: 300px; height: auto; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.5);">
+  <img src="img/local-show-tive.jpg" alt="Local-Show-Tive Train Logo" style="width: 300px; height: auto; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); object-fit: fill;">
 </p>
 
 # Local-Show-Tive
