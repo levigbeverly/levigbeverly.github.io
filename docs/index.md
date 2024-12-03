@@ -3,10 +3,6 @@ title: Overview
 layout: home
 nav_order: 1
 ---
-<p>
-  <img src="img/local-show-tive.jpg" alt="Local-Show-Tive Train Logo" style="width: 300px; height: auto; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); object-fit: fill;">
-</p>
-
 # Local-Show-Tive
 
 **Local-Show-Tive** is a REST API service that makes local concert planning and searching in the United States easy and streamlined. 
@@ -17,6 +13,10 @@ nav_order: 1
 **Local-Show-Tive** allows users to update and query an ongoing database of live music events. 
 
 **Local-Show-Tive** is cloud-based and available for use on any device that can connect to the internet. The service is easy to use, and requires minimal to no experience with REST APIs. 
+
+<p>
+  <img src="img/local-show-tive.jpg" alt="Local-Show-Tive Train Logo" style="width: 300px; height: auto; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); object-fit: fill;">
+</p>
 
 ## First-time Users
 
