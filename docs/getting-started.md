@@ -78,4 +78,4 @@ If you don't see the list of concerts, or receive an error in any step of the pr
 - A required software component didn't install correctly.
 - A required software component isn't up to date.
 
-If you see the list of concerts from the service, you are ready to use **Local-Show-Tive**. We recommending viewing the [Quickstart](quickstart.md) to quickly set up your first venues and concert listings, or your can return the documentation [landing page](index.md) to view the **Local-Show-Tive** tutorials and references.
+If you see the list of concerts from the service, you are ready to use **Local-Show-Tive**. We recommending viewing the [Quickstart](quickstart.md) topic to quickly set up your first venues and concert listings, or you can return to the documentation [landing page](index.md) to view the **Local-Show-Tive** tutorials and references.
