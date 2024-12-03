@@ -6,7 +6,7 @@ has_toc: false
 
 # Getting Started
 
-This document explains the prerequisite steps you need to take to being using **Local-Show-Tive**, and how to perform a test command on your development system.
+This document explains the prerequisite steps you need to take to begin using **Local-Show-Tive**, and how to perform a test **Local-Show-Tive** API call on your development system.
 
 This getting started process should take about 20 minutes.
 
@@ -15,7 +15,7 @@ To begin using **Local-Show-Tive**, you need to a [GitHub account](https://githu
 
 You must also install the following packages on your machine. We recommend opening the links in separate brower tabs before you start installing the software.
 
-* [Git](https://docs.github.com/en/get-started/quickstart/set-up-git) (this includes Git Bash, which we recommend using for running **Local-Show-Tive** commands)
+* [Git](https://docs.github.com/en/get-started/quickstart/set-up-git) (this includes Git Bash, which we recommend using for making **Local-Show-Tive** API calls)
 * A fork of the [Local-Show-Tive repo](https://github.com/levigbeverly/local-show-tive)
 * A current/LTS version of `node.js`
 * A current version of [json-server](https://www.npmjs.com/package/json-server)
@@ -78,4 +78,4 @@ If you don't see the list of concerts, or receive an error in any step of the pr
 - A required software component didn't install correctly.
 - A required software component isn't up to date.
 
-If you see the list of concerts from the service, you are ready to use **Local-Show-Tive**. We recommending viewing the [Quickstart](quickstart.md) to quickly set up your first venues and concert listings, or your can return the documentation [landing page](index.md) to view the **Local-Show-Tive** tutorials and references.
+If you see the list of concerts from the service, you are ready to use **Local-Show-Tive**. We recommending viewing the [Quickstart](quickstart.md) topic to quickly set up your first venues and concert listings, or you can return to the documentation [landing page](index.md) to view the **Local-Show-Tive** tutorials and references.

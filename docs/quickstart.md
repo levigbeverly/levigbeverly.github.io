@@ -5,13 +5,13 @@ has_toc: false
 ---
 # Quickstart
 
-If you have just set up the **Local-Show-Tive** service on your machine, complete the follow steps to add your first venues and concert listings. To get started, we recommend creating three venues and three concert listings, but you can use the following process to create as many as you like.
+If you have just set up the **Local-Show-Tive** service on your machine, complete the following steps to add your first venues and concert listings. To get started, we recommend creating three venues and three concert listings, but you can use the following process to create as many as you like.
 
 This process will take about 15 minutes.
 
 You will have to use a command-line tool to complete the quickstart steps. We recommend using Git Bash. If you use a different command-line tool, you may need to adapt the provided syntax for your tool of choice.
 
-_**Note:** These steps assume that you have already completed the **Local-Show-Tive** getting started process. If you have not, complete the steps described in [Getting started](getting-started.md), then return to this topic._
+_**Note:** These steps assume that you have already completed the **Local-Show-Tive** getting started process. If you have not, complete the steps described in [Getting Started](getting-started.md), then return to this topic._
 
 ## Add your first venues and concert listings
 
@@ -86,4 +86,4 @@ _**Note:** These steps assume that you have already completed the **Local-Show-T
     ```
    The new concerts appear in the response body.
 
-Now that you have added your first venues and concerts, return the documentation [landing page](index.md) to view the **Local-Show-Tive** tutorials and references.
+Now that you have added your first venues and concerts, view the **Local-Show-Tive** [tutorials](tutorials/index.md) and [references](references/index.md).
