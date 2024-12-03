@@ -6,7 +6,7 @@ has_toc: false
 
 # Getting Started
 
-This document explains the prerequisite steps you need to take to being using **Local-Show-Tive**, and how to perform a test command on your development system.
+This document explains the prerequisite steps you need to take to begin using **Local-Show-Tive**, and how to perform a test **Local-Show-Tive** API call on your development system.
 
 This getting started process should take about 20 minutes.
 
