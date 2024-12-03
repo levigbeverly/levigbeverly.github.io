@@ -3,7 +3,7 @@ title: Overview
 layout: home
 nav_order: 1
 ---
-# ![Logo](img/local-show-tive.jpg) Local-Show-Tive
+# <img src="img/local-show-tive.jpg" alt="Logo" width="30" style="vertical-align: middle;"> Local-Show-Tive
 
 **Local-Show-Tive** is a REST API service that makes local concert planning and searching in the United States easy and streamlined. 
 - _Concert-goers_: You can use **Local-Show-Tive** to find a detailed list of upcoming shows in your area.
