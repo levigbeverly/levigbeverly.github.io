@@ -5,8 +5,8 @@ nav_order: 1
 ---
 # Local-Show-Tive
 
-<p align="center">
-  <img src="img/local-show-tive.jpg" alt="Local-Show-Tive Train Logo" width="300">
+<p>
+  <img src="img/local-show-tive.jpg" alt="Local-Show-Tive Train Logo" style="width: 300px; height: auto; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.5);">
 </p>
 
 **Local-Show-Tive** is a REST API service that makes local concert planning and searching in the United States easy and streamlined. 
