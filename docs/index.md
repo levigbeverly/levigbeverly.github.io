@@ -10,7 +10,7 @@ nav_order: 1
 - _Venue owners_: You can use **Local-Show-Tive** to share consistent information about your venue.
 - _Artists, managers, and promoters_: You can use **Local-Show-Tive** to post and update information about your upcoming shows.
 
-**Local-Show-Tive** allows users to update and query an ongoing database of live music events. 
+**Local-Show-Tive** allows users to update and query an ongoing database of concerts and venues.
 
 **Local-Show-Tive** is cloud-based and available for use on any device that can connect to the internet. The service is easy to use, and requires minimal to no experience with REST APIs. 
 
