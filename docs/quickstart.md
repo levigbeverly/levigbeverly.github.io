@@ -86,4 +86,4 @@ _**Note:** These steps assume that you have already completed the **Local-Show-T
     ```
    The new concerts appear in the response body.
 
-Now that you have added your first venues and concerts, return to the documentation [landing page](index.md) to view the **Local-Show-Tive** tutorials and references.
+Now that you have added your first venues and concerts, view the **Local-Show-Tive** [tutorials](tutorials/index.md) and [references](references/index.md).
