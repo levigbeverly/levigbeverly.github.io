@@ -1,2 +1,2 @@
 # levigbeverly.github.io
-Personal career portfolio and tech writer showcase
+Personal career portfolio and tech writer showcase.
