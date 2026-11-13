@@ -12,16 +12,30 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            900: '#134e4a',
-                            950: '#042f2e',
+                        maroon: {
+                            950: 'var(--bg-base)',
+                            900: 'var(--bg-card)',
+                            850: 'var(--bg-card-elevated)',
+                            800: 'var(--border-subtle)',
+                            700: 'var(--border-accent)',
+                            600: 'var(--accent-secondary)',
+                            500: 'var(--accent-secondary)',
+                            400: 'var(--accent-secondary)',
                         },
-                        codebg: '#1e1e2e',
+                        seafoam: {
+                            50: '#f0fdf8',
+                            100: '#ccfbee',
+                            200: '#9ef5dc',
+                            300: '#71eeb8',
+                            400: '#4ad99d',
+                            500: '#2bbd82',
+                            600: '#1f9968',
+                        },
+                        warmtext: {
+                            100: 'var(--text-primary)',
+                            300: 'var(--text-secondary)',
+                            400: 'var(--text-muted)',
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -38,8 +52,21 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Locked-in Theme: Obsidian Violet & Sea Foam Green */
+        :root {
+            --bg-base: #0d0b14;
+            --bg-card: #161324;
+            --bg-card-elevated: #201c33;
+            --border-subtle: #2c2745;
+            --border-accent: #443d69;
+            --accent-secondary: #6a609e;
+            --text-primary: #f4f3fa;
+            --text-secondary: #d2cfe6;
+            --text-muted: #9c97bd;
+        }
         body {
             font-family: 'Inter', sans-serif;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
         .code-font {
             font-family: 'Fira Code', monospace;
@@ -49,100 +76,67 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: var(--bg-base);
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: var(--border-accent);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #0d9488;
+            background: #71eeb8;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-teal-500 selection:text-white relative">
+<body class="bg-maroon-950 text-warmtext-100 antialiased selection:bg-seafoam-300 selection:text-maroon-950 relative">
 
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-all">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <span class="code-font text-teal-400 text-lg font-semibold group-hover:text-teal-300 transition-colors">&lt;LB /&gt;</span>
-                <span class="font-bold tracking-tight text-slate-100 group-hover:text-teal-400 transition-colors hidden sm:inline">Levi Beverly</span>
-            </a>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#about" class="text-slate-300 hover:text-teal-400 transition-colors">About</a>
-                <a href="#experience" class="text-slate-300 hover:text-teal-400 transition-colors">Experience & Resume</a>
-                <a href="#portfolio" class="text-slate-300 hover:text-teal-400 transition-colors">Work Examples</a>
-                <a href="#contact" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-semibold transition-all shadow-lg shadow-teal-900/30">Contact Me</a>
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-maroon-950/85 border-b border-maroon-800/80 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-end">
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-warmtext-300">
+                <a href="#about" class="hover:text-seafoam-300 transition-colors">About</a>
+                <a href="#experience" class="hover:text-seafoam-300 transition-colors">Experience &amp; Resume</a>
+                <a href="#portfolio" class="hover:text-seafoam-300 transition-colors">Work Examples</a>
+                <button onclick="openContactModal()" class="px-4 py-2 rounded-lg bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold transition-all shadow-sm">
+                    Contact Me
+                </button>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden text-warmtext-300 hover:text-seafoam-300 p-2 rounded-lg focus:outline-none">
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900 px-4 pt-2 pb-6 space-y-3">
-            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-teal-400 hover:bg-slate-800">About Me</a>
-            <a href="#experience" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-teal-400 hover:bg-slate-800">Experience & Resume</a>
-            <a href="#portfolio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-teal-400 hover:bg-slate-800">Work Examples</a>
-            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium bg-teal-600 text-white hover:bg-teal-500 text-center">Contact Me</a>
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-maroon-900 border-b border-maroon-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-warmtext-300 hover:bg-maroon-850 hover:text-seafoam-300 font-medium">About</a>
+            <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg text-warmtext-300 hover:bg-maroon-850 hover:text-seafoam-300 font-medium">Experience &amp; Resume</a>
+            <a href="#portfolio" class="mobile-link block px-3 py-2 rounded-lg text-warmtext-300 hover:bg-maroon-850 hover:text-seafoam-300 font-medium">Work Examples</a>
+            <button onclick="openContactModal()" class="w-full text-left px-3 py-2 rounded-lg bg-seafoam-300 text-maroon-950 font-bold">
+                Contact Me
+            </button>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-24 sm:space-y-32">
 
         <!-- HERO SECTION -->
-        <section class="pt-8 pb-12 sm:pt-16 sm:pb-20 flex flex-col items-start justify-center relative">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold code-font mb-6">
-                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                Available for Senior Technical Writing & Lead Roles
-            </div>
-
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4">
-                Levi Beverly
-            </h1>
-            <h2 class="text-2xl sm:text-3xl text-teal-400 font-semibold mb-6 code-font">
-                Senior Technical Writer
-            </h2>
-
-            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed mb-8">
-                Crafting clear, developer-first documentation. Specializing in <span class="text-slate-100 font-semibold underline decoration-teal-500 decoration-2">REST API references</span>, <span class="text-slate-100 font-semibold underline decoration-teal-500 decoration-2">Docs-as-Code workflows</span>, SDK guides, and <span class="text-slate-100 font-semibold underline decoration-teal-500 decoration-2">in-app governance</span>.
-            </p>
-
-            <div class="flex flex-wrap gap-4 items-center">
-                <a href="#portfolio" class="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold transition-all shadow-lg shadow-teal-900/30 flex items-center gap-2">
-                    <i class="fa-solid fa-folder-open"></i> View Work Samples
-                </a>
-                <a href="https://www.linkedin.com/in/levigarrettbeverly/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold transition-all flex items-center gap-2">
-                    <i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn
-                </a>
-                <a href="https://github.com/levigbeverly" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold transition-all flex items-center gap-2">
-                    <i class="fa-brands fa-github text-slate-300"></i> GitHub
-                </a>
-            </div>
-
-            <!-- Terminal Decorative Code Card -->
-            <div class="mt-12 w-full max-w-3xl rounded-xl bg-codebg border border-slate-800 shadow-2xl overflow-hidden code-font text-xs sm:text-sm">
-                <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-                        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-                    </div>
-                    <span class="text-slate-500 text-xs">levi-beverly-config.yaml</span>
-                </div>
-                <div class="p-4 sm:p-6 text-slate-300 space-y-2 overflow-x-auto">
-                    <p><span class="text-rose-400">writer</span>:</p>
-                    <p class="pl-4"><span class="text-teal-400">name</span>: <span class="text-amber-300">"Levi Beverly"</span></p>
-                    <p class="pl-4"><span class="text-teal-400">role</span>: <span class="text-amber-300">"Senior Technical Writer"</span></p>
-                    <p class="pl-4"><span class="text-teal-400">core_focus</span>: [<span class="text-amber-300">"API Docs"</span>, <span class="text-amber-300">"Developer Experience"</span>, <span class="text-amber-300">"Docs-as-Code"</span>]</p>
-                    <p class="pl-4"><span class="text-teal-400">tooling</span>: [<span class="text-amber-300">"OpenAPI / Swagger"</span>, <span class="text-amber-300">"Markdown / MDX"</span>, <span class="text-amber-300">"Git"</span>, <span class="text-amber-300">"CI/CD"</span>, <span class="text-amber-300">"Pendo"</span>]</p>
-                    <p class="pl-4"><span class="text-teal-400">status</span>: <span class="text-emerald-400">"Building intuitive developer experiences."</span></p>
+        <section class="pt-4 sm:pt-8">
+            <div class="max-w-3xl space-y-6">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-warmtext-100 tracking-tight leading-tight">
+                    Levi Beverly
+                </h1>
+                <p class="text-xl sm:text-2xl font-bold text-seafoam-300 code-font">
+                    Senior Technical Writer
+                </p>
+                <p class="text-lg sm:text-xl text-warmtext-300 leading-relaxed">
+                    Crafting clear, developer-first documentation. Specializing in <span class="text-warmtext-100 underline decoration-seafoam-300/60 underline-offset-4">REST API references</span>, <span class="text-warmtext-100 underline decoration-seafoam-300/60 underline-offset-4">Docs-as-Code workflows</span>, SDK guides, and <span class="text-warmtext-100 underline decoration-seafoam-300/60 underline-offset-4">in-app governance</span>.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-4">
+                    <a href="#portfolio" class="px-6 py-3 rounded-xl bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold text-sm sm:text-base transition-all shadow-lg shadow-black/40 flex items-center gap-2">
+                        <i class="fa-solid fa-folder-open"></i> View Work Samples
+                    </a>
                 </div>
             </div>
         </section>
@@ -151,29 +145,29 @@
         <section id="about" class="scroll-mt-24">
             <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="md:w-1/3">
-                    <h2 class="text-3xl font-bold text-white tracking-tight mb-2">About Me</h2>
-                    <p class="text-teal-400 code-font text-sm font-semibold">Bridging the gap between engineers & users</p>
-                    <div class="h-1 w-16 bg-teal-500 rounded-full mt-4"></div>
+                    <h2 class="text-3xl font-bold text-warmtext-100 tracking-tight mb-2">About Me</h2>
+                    <p class="text-seafoam-300 code-font text-sm font-semibold">Bridging the gap between engineers & users</p>
+                    <div class="h-1 w-16 bg-seafoam-300 rounded-full mt-4"></div>
                 </div>
-                <div class="md:w-2/3 space-y-6 text-slate-300 leading-relaxed text-lg">
+                <div class="md:w-2/3 space-y-6 text-warmtext-300 leading-relaxed text-lg">
                     <p>
-                        Hello! I’m **Levi Beverly**, a **Senior Technical Writer** with a deep passion for modern developer documentation, API usability, and streamlined docs-as-code engineering workflows.
+                        Hello! I’m <strong class="text-warmtext-100 font-semibold">Levi Beverly</strong>, a <strong class="text-warmtext-100 font-semibold">Senior Technical Writer</strong> with a deep passion for modern developer documentation, API usability, and streamlined docs-as-code engineering workflows.
                     </p>
                     <p>
-                        With years of experience partnering with product engineering, developer relations, and platform teams, I focus on creating documentation ecosystems that scale effortlessly. Whether it’s authoring comprehensive **OpenAPI specifications**, standardizing complex architecture guides, or establishing **In-App user onboarding governance**, I ensure content is precise, actionable, and user-centric.
+                        With years of experience partnering with product engineering, developer relations, and platform teams, I focus on creating documentation ecosystems that scale effortlessly. Whether it’s authoring comprehensive <strong class="text-warmtext-100 font-semibold">OpenAPI specifications</strong>, standardizing complex architecture guides, or establishing <strong class="text-warmtext-100 font-semibold">In-App user onboarding governance</strong>, I ensure content is precise, actionable, and user-centric.
                     </p>
 
                     <!-- Highlights Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                            <i class="fa-solid fa-code text-teal-400 text-xl mb-2"></i>
-                            <h3 class="font-bold text-white text-base">Docs-as-Code Specialist</h3>
-                            <p class="text-slate-400 text-sm mt-1">Managing documentation in Git repositories with automated CI/CD linting and deployment.</p>
+                        <div class="p-5 rounded-xl bg-maroon-900/90 border border-maroon-800 hover:border-seafoam-300/40 transition-colors">
+                            <i class="fa-solid fa-code text-seafoam-300 text-xl mb-2"></i>
+                            <h3 class="font-bold text-warmtext-100 text-base">Docs-as-Code Specialist</h3>
+                            <p class="text-warmtext-400 text-sm mt-1">Managing documentation in Git repositories with automated CI/CD linting and deployment.</p>
                         </div>
-                        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-                            <i class="fa-solid fa-network-wired text-teal-400 text-xl mb-2"></i>
-                            <h3 class="font-bold text-white text-base">API Architecture</h3>
-                            <p class="text-slate-400 text-sm mt-1">Designing structured REST API references, authentication walkthroughs, and SDK guides.</p>
+                        <div class="p-5 rounded-xl bg-maroon-900/90 border border-maroon-800 hover:border-seafoam-300/40 transition-colors">
+                            <i class="fa-solid fa-network-wired text-seafoam-300 text-xl mb-2"></i>
+                            <h3 class="font-bold text-warmtext-100 text-base">API Architecture</h3>
+                            <p class="text-warmtext-400 text-sm mt-1">Designing structured REST API references, authentication walkthroughs, and SDK guides.</p>
                         </div>
                     </div>
                 </div>
@@ -184,40 +178,40 @@
         <section id="experience" class="scroll-mt-24">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
                 <div>
-                    <h2 class="text-3xl font-bold text-white tracking-tight">Experience & Resume</h2>
-                    <p class="text-slate-400 text-base mt-1">My professional journey and core technical toolkit.</p>
+                    <h2 class="text-3xl font-bold text-warmtext-100 tracking-tight">Experience & Resume</h2>
+                    <p class="text-warmtext-400 text-base mt-1">My professional journey and core technical toolkit.</p>
                 </div>
-                <button onclick="openResumeModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-teal-400 font-semibold text-sm transition-all flex items-center gap-2">
+                <button onclick="openResumeModal()" class="px-5 py-2.5 rounded-xl bg-maroon-900 hover:bg-maroon-850 border border-maroon-700 text-seafoam-300 font-semibold text-sm transition-all flex items-center gap-2">
                     <i class="fa-solid fa-file-pdf"></i> View & Print Resume
                 </button>
             </div>
 
             <!-- Skills Badges -->
-            <div class="mb-12 p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80">
-                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 code-font">Core Technical Skills</h3>
+            <div class="mb-12 p-6 rounded-2xl bg-maroon-900/70 border border-maroon-800">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-warmtext-400 mb-4 code-font">Core Technical Skills</h3>
                 <div class="flex flex-wrap gap-2.5">
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">OpenAPI / Swagger</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">Markdown / MDX</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">Git & GitHub Actions</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">REST API Design</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">Pendo / In-App Guides</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">Postman Collections</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">Docusaurus / MkDocs</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium">Information Architecture</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">OpenAPI / Swagger</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">Markdown / MDX</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">Git & GitHub Actions</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">REST API Design</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">Pendo / In-App Guides</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">Postman Collections</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">Docusaurus / MkDocs</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-maroon-850 border border-maroon-700 text-warmtext-100 text-sm font-medium">Information Architecture</span>
                 </div>
             </div>
 
             <!-- Timeline -->
-            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-10 pl-6 md:pl-8">
+            <div class="relative border-l-2 border-maroon-800 ml-4 md:ml-6 space-y-10 pl-6 md:pl-8">
                 <!-- Role 1 -->
                 <div class="relative group">
-                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-seafoam-300 border-4 border-maroon-950 group-hover:scale-125 transition-transform"></div>
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                        <h3 class="text-xl font-bold text-white">Senior Technical Writer</h3>
-                        <span class="text-xs font-semibold code-font text-teal-400 bg-teal-950/60 border border-teal-800/50 px-3 py-1 rounded-full w-fit">2021 — Present</span>
+                        <h3 class="text-xl font-bold text-warmtext-100">Senior Technical Writer</h3>
+                        <span class="text-xs font-semibold code-font text-seafoam-300 bg-maroon-900 border border-maroon-700 px-3 py-1 rounded-full w-fit">2021 — Present</span>
                     </div>
-                    <p class="text-slate-400 font-medium text-sm mb-3">Enterprise Cloud & API Platform</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm sm:text-base leading-relaxed">
+                    <p class="text-warmtext-400 font-medium text-sm mb-3">Enterprise Cloud & API Platform</p>
+                    <ul class="list-disc list-inside text-warmtext-300 space-y-2 text-sm sm:text-base leading-relaxed">
                         <li>Architected end-to-end Docs-as-Code pipeline using Git, Markdown, and static site generators, reducing publish times from days to minutes.</li>
                         <li>Standardized REST API specifications using OpenAPI 3.0 specs, enabling automated SDK generation and interactive developer consoles.</li>
                         <li>Created cross-functional governance frameworks for in-app microcopy and user onboarding guides (Pendo).</li>
@@ -226,13 +220,13 @@
 
                 <!-- Role 2 -->
                 <div class="relative group">
-                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950 group-hover:bg-teal-500 group-hover:scale-125 transition-all"></div>
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-maroon-600 border-4 border-maroon-950 group-hover:bg-seafoam-300 group-hover:scale-125 transition-all"></div>
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                        <h3 class="text-xl font-bold text-white">Technical Writer & API Specialist</h3>
-                        <span class="text-xs font-semibold code-font text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-full w-fit">2018 — 2021</span>
+                        <h3 class="text-xl font-bold text-warmtext-100">Technical Writer & API Specialist</h3>
+                        <span class="text-xs font-semibold code-font text-warmtext-400 bg-maroon-900 border border-maroon-800 px-3 py-1 rounded-full w-fit">2018 — 2021</span>
                     </div>
-                    <p class="text-slate-400 font-medium text-sm mb-3">Developer Services Solutions</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm sm:text-base leading-relaxed">
+                    <p class="text-warmtext-400 font-medium text-sm mb-3">Developer Services Solutions</p>
+                    <ul class="list-disc list-inside text-warmtext-300 space-y-2 text-sm sm:text-base leading-relaxed">
                         <li>Authored comprehensive developer portal documentation, code samples, and quickstart guides in Python, JavaScript, and cURL.</li>
                         <li>Partnered closely with engineering teams to document complex microservice APIs, webhooks, and rate-limiting protocols.</li>
                     </ul>
@@ -243,96 +237,96 @@
         <!-- WORK & PORTFOLIO SECTION -->
         <section id="portfolio" class="scroll-mt-24">
             <div class="mb-12">
-                <h2 class="text-3xl font-bold text-white tracking-tight">Featured Work & Documentation Samples</h2>
-                <p class="text-slate-400 text-base mt-1">Selected projects highlighting API docs, structured specs, and governance.</p>
+                <h2 class="text-3xl font-bold text-warmtext-100 tracking-tight">Featured Work & Documentation Samples</h2>
+                <p class="text-warmtext-400 text-base mt-1">Selected projects highlighting API docs, structured specs, and governance.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
                 <!-- FEATURED PROJECT CARD: Local Show-Tive -->
-                <div class="lg:col-span-2 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-teal-500/30 p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between group hover:border-teal-500/60 transition-all shadow-xl">
-                    <div class="absolute top-0 right-0 px-4 py-1.5 bg-teal-500 text-slate-950 font-bold text-xs rounded-bl-xl uppercase tracking-wider code-font">
+                <div class="lg:col-span-2 rounded-2xl bg-gradient-to-br from-maroon-900 via-maroon-900 to-maroon-950 border border-seafoam-300/35 p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between group hover:border-seafoam-300/75 transition-all shadow-xl">
+                    <div class="absolute top-0 right-0 px-4 py-1.5 bg-seafoam-300 text-maroon-950 font-bold text-xs rounded-bl-xl uppercase tracking-wider code-font">
                         Featured Sample
                     </div>
 
                     <div>
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-bold text-lg">
+                            <div class="w-10 h-10 rounded-lg bg-seafoam-300/15 border border-seafoam-300/35 flex items-center justify-center text-seafoam-300 font-bold text-lg">
                                 <i class="fa-solid fa-book-bookmark"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-teal-300 transition-colors">Local Show-Tive API Doc Collection</h3>
-                                <p class="text-slate-400 text-xs code-font">Class & Portfolio API Spec Project</p>
+                                <h3 class="text-2xl font-bold text-warmtext-100 group-hover:text-seafoam-300 transition-colors">Local Show-Tive API Doc Collection</h3>
+                                <p class="text-warmtext-400 text-xs code-font">Class & Portfolio API Spec Project</p>
                             </div>
                         </div>
 
-                        <p class="text-slate-300 mb-6 leading-relaxed">
+                        <p class="text-warmtext-300 mb-6 leading-relaxed">
                             A comprehensive, structured API documentation collection demonstrating clear endpoint hierarchies, request parameters, response schemas, and authentication walkthroughs for local venue and event management services.
                         </p>
 
                         <!-- Key Features Checklist -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-400 mb-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-warmtext-300 mb-8">
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-check text-teal-400 text-xs"></i> RESTful Endpoints & HTTP Methods
+                                <i class="fa-solid fa-check text-seafoam-300 text-xs"></i> RESTful Endpoints & HTTP Methods
                             </div>
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-check text-teal-400 text-xs"></i> OAuth2 & Token Authentication
+                                <i class="fa-solid fa-check text-seafoam-300 text-xs"></i> OAuth2 & Token Authentication
                             </div>
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-check text-teal-400 text-xs"></i> JSON Request/Response Schemas
+                                <i class="fa-solid fa-check text-seafoam-300 text-xs"></i> JSON Request/Response Schemas
                             </div>
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-check text-teal-400 text-xs"></i> GitHub Pages Deployment
+                                <i class="fa-solid fa-check text-seafoam-300 text-xs"></i> GitHub Pages Deployment
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800">
-                        <a href="https://levigbeverly.github.io/local-show-tive" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-teal-900/30">
+                    <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-maroon-800">
+                        <a href="https://levigbeverly.github.io/local-show-tive" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-black/40">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live API Docs Page
                         </a>
-                        <span class="text-xs text-slate-400 code-font">levigbeverly.github.io/local-show-tive</span>
+                        <span class="text-xs text-warmtext-400 code-font">levigbeverly.github.io/local-show-tive</span>
                     </div>
                 </div>
 
                 <!-- SAMPLE CARD 2: Docs-as-Code Pipeline -->
-                <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <div class="rounded-2xl bg-maroon-900/85 border border-maroon-800 p-6 flex flex-col justify-between hover:border-seafoam-300/40 transition-all">
                     <div>
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-maroon-800 border border-maroon-700 flex items-center justify-center text-seafoam-300 font-bold text-lg mb-4">
                             <i class="fa-solid fa-gears"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Docs-as-Code CI/CD Architecture</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        <h3 class="text-xl font-bold text-warmtext-100 mb-2">Docs-as-Code CI/CD Architecture</h3>
+                        <p class="text-warmtext-400 text-sm mb-4 leading-relaxed">
                             Framework blueprint for integrating Vale linter, Markdownlint, and GitHub Actions into engineering repositories for automated PR checks.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 code-font">GitHub Actions</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 code-font">Vale</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 code-font">CI/CD</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-maroon-850 border border-maroon-700 text-warmtext-300 code-font">GitHub Actions</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-maroon-850 border border-maroon-700 text-warmtext-300 code-font">Vale</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-maroon-850 border border-maroon-700 text-warmtext-300 code-font">CI/CD</span>
                         </div>
                     </div>
-                    <button onclick="showProjectDetails('Docs-as-Code CI/CD Architecture', 'Automated documentation quality checks utilizing Git hooks and GitHub Actions to enforce style guides, broken link checking, and schema validation automatically during pull requests.')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold transition-all">
+                    <button onclick="showProjectDetails('Docs-as-Code CI/CD Architecture', 'Automated documentation quality checks utilizing Git hooks and GitHub Actions to enforce style guides, broken link checking, and schema validation automatically during pull requests.')" class="w-full py-2.5 rounded-xl bg-maroon-850 hover:bg-maroon-800 border border-maroon-700 text-seafoam-300 text-sm font-semibold transition-all">
                         View Project Overview
                     </button>
                 </div>
 
                 <!-- SAMPLE CARD 3: In-App Governance -->
-                <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <div class="rounded-2xl bg-maroon-900/85 border border-maroon-800 p-6 flex flex-col justify-between hover:border-seafoam-300/40 transition-all">
                     <div>
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-lg mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-maroon-800 border border-maroon-700 flex items-center justify-center text-seafoam-300 font-bold text-lg mb-4">
                             <i class="fa-solid fa-layer-group"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2">In-App Guide Governance Framework</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        <h3 class="text-xl font-bold text-warmtext-100 mb-2">In-App Guide Governance Framework</h3>
+                        <p class="text-warmtext-400 text-sm mb-4 leading-relaxed">
                             Standardized style guidelines and microcopy governance for Pendo in-app tooltips, onboarding flows, and product announcements.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 code-font">Pendo</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 code-font">UX Writing</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 code-font">Governance</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-maroon-850 border border-maroon-700 text-warmtext-300 code-font">Pendo</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-maroon-850 border border-maroon-700 text-warmtext-300 code-font">UX Writing</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-maroon-850 border border-maroon-700 text-warmtext-300 code-font">Governance</span>
                         </div>
                     </div>
-                    <button onclick="showProjectDetails('In-App Guide Governance Framework', 'Established product-wide standards for modal popups, tooltip microcopy, and interactive product tours to minimize user friction and elevate onboarding metrics.')" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold transition-all">
+                    <button onclick="showProjectDetails('In-App Guide Governance Framework', 'Established product-wide standards for modal popups, tooltip microcopy, and interactive product tours to minimize user friction and elevate onboarding metrics.')" class="w-full py-2.5 rounded-xl bg-maroon-850 hover:bg-maroon-800 border border-maroon-700 text-seafoam-300 text-sm font-semibold transition-all">
                         View Project Overview
                     </button>
                 </div>
@@ -342,21 +336,21 @@
 
         <!-- CONTACT SECTION -->
         <section id="contact" class="scroll-mt-24 pt-8">
-            <div class="rounded-3xl bg-gradient-to-r from-teal-950/40 via-slate-900 to-slate-950 border border-slate-800 p-8 sm:p-12">
+            <div class="rounded-3xl bg-gradient-to-r from-maroon-900 via-maroon-850 to-maroon-900 border border-maroon-700/80 p-8 sm:p-12 shadow-2xl">
                 <div class="max-w-2xl mx-auto text-center space-y-6">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Connect</h2>
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-warmtext-100 tracking-tight">Let's Connect</h2>
+                    <p class="text-warmtext-300 text-base sm:text-lg leading-relaxed">
                         Interested in discussing technical documentation, API strategy, or potential opportunities? Feel free to reach out directly or check out my profiles.
                     </p>
 
                     <div class="flex flex-wrap justify-center gap-4 pt-4">
-                        <a href="https://www.linkedin.com/in/levigarrettbeverly/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-linkedin text-blue-400 text-lg"></i> LinkedIn Profile
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-maroon-950 hover:bg-maroon-800 border border-maroon-700 text-warmtext-100 font-semibold transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin text-seafoam-300 text-lg"></i> LinkedIn Profile
                         </a>
-                        <a href="https://github.com/levigbeverly" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-github text-slate-300 text-lg"></i> GitHub Profile
+                        <a href="https://github.com/levigbeverly" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-maroon-950 hover:bg-maroon-800 border border-maroon-700 text-warmtext-100 font-semibold transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-github text-seafoam-300 text-lg"></i> GitHub Profile
                         </a>
-                        <button onclick="openContactModal()" class="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold transition-all shadow-lg shadow-teal-900/40 flex items-center gap-2">
+                        <button onclick="openContactModal()" class="px-6 py-3 rounded-xl bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold transition-all shadow-lg shadow-black/40 flex items-center gap-2">
                             <i class="fa-solid fa-envelope"></i> Send Message
                         </button>
                     </div>
@@ -366,89 +360,89 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm code-font">
+    <footer class="border-t border-maroon-800 py-8 text-center text-warmtext-400 text-sm code-font">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p>&copy; <span id="year"></span> Levi Beverly. Built with HTML, Tailwind CSS & JS.</p>
             <div class="flex items-center gap-6">
-                <a href="https://levigbeverly.github.io/local-show-tive" target="_blank" class="hover:text-teal-400 transition-colors">API Docs Demo</a>
-                <a href="https://github.com/levigbeverly" target="_blank" class="hover:text-teal-400 transition-colors">GitHub</a>
+                <a href="https://levigbeverly.github.io/local-show-tive" target="_blank" class="hover:text-seafoam-300 transition-colors">API Docs Demo</a>
+                <a href="https://github.com/levigbeverly" target="_blank" class="hover:text-seafoam-300 transition-colors">GitHub</a>
             </div>
         </div>
     </footer>
 
     <!-- RESUME MODAL -->
-    <div id="resume-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 w-full max-w-3xl rounded-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-slate-200">
-            <button onclick="closeResumeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+    <div id="resume-modal" class="fixed inset-0 bg-maroon-950/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-maroon-900 border border-maroon-700 w-full max-w-3xl rounded-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-warmtext-100 shadow-2xl">
+            <button onclick="closeResumeModal()" class="absolute top-4 right-4 text-warmtext-400 hover:text-seafoam-300 p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
-            <div class="border-b border-slate-800 pb-4 mb-6">
-                <h3 class="text-2xl font-bold text-white">Levi Beverly</h3>
-                <p class="text-teal-400 code-font text-sm">Senior Technical Writer Resume Summary</p>
+            <div class="border-b border-maroon-800 pb-4 mb-6">
+                <h3 class="text-2xl font-bold text-warmtext-100">Levi Beverly</h3>
+                <p class="text-seafoam-300 code-font text-sm">Senior Technical Writer Resume Summary</p>
             </div>
             <div class="space-y-6 text-sm">
                 <div>
-                    <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2 code-font text-teal-400">Professional Summary</h4>
-                    <p class="text-slate-300 leading-relaxed">Senior Technical Writer with expertise in authoring software documentation, API references, and establishing Docs-as-Code architectures. Proven track record in improving developer onboarding and streamlining internal content workflows.</p>
+                    <h4 class="font-bold uppercase text-xs tracking-wider mb-2 code-font text-seafoam-300">Professional Summary</h4>
+                    <p class="text-warmtext-300 leading-relaxed">Senior Technical Writer with expertise in authoring software documentation, API references, and establishing Docs-as-Code architectures. Proven track record in improving developer onboarding and streamlining internal content workflows.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2 code-font text-teal-400">Technical Skills</h4>
-                    <p class="text-slate-300">OpenAPI (Swagger), Markdown/MDX, Git, GitHub Actions, Pendo, REST APIs, HTML/CSS, Vale, Postman, Docusaurus.</p>
+                    <h4 class="font-bold uppercase text-xs tracking-wider mb-2 code-font text-seafoam-300">Technical Skills</h4>
+                    <p class="text-warmtext-300">OpenAPI (Swagger), Markdown/MDX, Git, GitHub Actions, Pendo, REST APIs, HTML/CSS, Vale, Postman, Docusaurus.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2 code-font text-teal-400">Key Achievements</h4>
-                    <ul class="list-disc list-inside text-slate-300 space-y-1">
+                    <h4 class="font-bold uppercase text-xs tracking-wider mb-2 code-font text-seafoam-300">Key Achievements</h4>
+                    <ul class="list-disc list-inside text-warmtext-300 space-y-1">
                         <li>Decreased developer support tickets by 30% via streamlined API documentation.</li>
                         <li>Implemented continuous integration linting for documentation style guides.</li>
                     </ul>
                 </div>
             </div>
             <div class="mt-8 flex justify-end gap-4">
-                <button onclick="closeResumeModal()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium">Close</button>
-                <button onclick="window.print()" class="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-500 text-white font-semibold">Print Resume</button>
+                <button onclick="closeResumeModal()" class="px-4 py-2 rounded-lg bg-maroon-850 hover:bg-maroon-800 border border-maroon-700 text-warmtext-300 font-medium">Close</button>
+                <button onclick="window.print()" class="px-4 py-2 rounded-lg bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold">Print Resume</button>
             </div>
         </div>
     </div>
 
     <!-- PROJECT DETAILS MODAL -->
-    <div id="project-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-2xl p-6 relative text-slate-200">
-            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+    <div id="project-modal" class="fixed inset-0 bg-maroon-950/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-maroon-900 border border-maroon-700 w-full max-w-lg rounded-2xl p-6 relative text-warmtext-100 shadow-2xl">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-warmtext-400 hover:text-seafoam-300 p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
-            <h3 id="modal-title" class="text-xl font-bold text-white mb-2"></h3>
-            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed mb-6"></p>
-            <button onclick="closeProjectModal()" class="w-full py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-sm">Close</button>
+            <h3 id="modal-title" class="text-xl font-bold text-warmtext-100 mb-2"></h3>
+            <p id="modal-desc" class="text-warmtext-300 text-sm leading-relaxed mb-6"></p>
+            <button onclick="closeProjectModal()" class="w-full py-2.5 rounded-xl bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold text-sm">Close</button>
         </div>
     </div>
 
     <!-- CONTACT FORM MODAL -->
-    <div id="contact-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-2xl p-6 sm:p-8 relative text-slate-200">
-            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+    <div id="contact-modal" class="fixed inset-0 bg-maroon-950/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-maroon-900 border border-maroon-700 w-full max-w-lg rounded-2xl p-6 sm:p-8 relative text-warmtext-100 shadow-2xl">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-warmtext-400 hover:text-seafoam-300 p-2">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
-            <h3 class="text-2xl font-bold text-white mb-1">Get in Touch</h3>
-            <p class="text-slate-400 text-sm mb-6">Send a direct message to Levi Beverly.</p>
+            <h3 class="text-2xl font-bold text-warmtext-100 mb-1">Get in Touch</h3>
+            <p class="text-warmtext-400 text-sm mb-6">Send a direct message to Levi Beverly.</p>
             
             <form onsubmit="handleContactSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
-                    <input type="text" required placeholder="Jane Doe" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-teal-500 text-sm">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-warmtext-400 mb-1">Your Name</label>
+                    <input type="text" required placeholder="Jane Doe" class="w-full bg-maroon-950 border border-maroon-800 rounded-lg px-4 py-2.5 text-warmtext-100 focus:outline-none focus:border-seafoam-300 text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Your Email</label>
-                    <input type="email" required placeholder="jane@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-teal-500 text-sm">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-warmtext-400 mb-1">Your Email</label>
+                    <input type="email" required placeholder="jane@example.com" class="w-full bg-maroon-950 border border-maroon-800 rounded-lg px-4 py-2.5 text-warmtext-100 focus:outline-none focus:border-seafoam-300 text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Message</label>
-                    <textarea rows="4" required placeholder="Hi Levi, I would like to discuss..." class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-teal-500 text-sm resize-none"></textarea>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-warmtext-400 mb-1">Message</label>
+                    <textarea rows="4" required placeholder="Hi Levi, I would like to discuss..." class="w-full bg-maroon-950 border border-maroon-800 rounded-lg px-4 py-2.5 text-warmtext-100 focus:outline-none focus:border-seafoam-300 text-sm resize-none"></textarea>
                 </div>
-                <button type="submit" class="w-full py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-sm transition-all shadow-lg shadow-teal-900/30">
+                <button type="submit" class="w-full py-3 rounded-xl bg-seafoam-300 hover:bg-seafoam-200 text-maroon-950 font-bold text-sm transition-all shadow-lg shadow-black/40">
                     Send Message
                 </button>
             </form>
-            <div id="contact-success" class="hidden mt-4 p-3 bg-teal-500/10 border border-teal-500/30 text-teal-400 text-sm rounded-lg text-center">
+            <div id="contact-success" class="hidden mt-4 p-3 bg-seafoam-300/15 border border-seafoam-300/40 text-seafoam-300 text-sm rounded-lg text-center">
                 Thank you! Your message has been sent.
             </div>
         </div>
@@ -465,26 +459,28 @@
         const menuIcon = document.getElementById('menu-icon');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        mobileBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            }
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
+        if (mobileBtn && mobileMenu && menuIcon) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
             });
-        });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
 
         // Resume Modal Handlers
         function openResumeModal() {
